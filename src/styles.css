@@ -452,7 +452,30 @@
 
   .visual-panel { display: grid; min-width: 0; gap: 1rem; }
   .circle-diagram { display: block; width: 100%; height: auto; border: 1px solid var(--color-border); border-radius: 11px; background: var(--color-card); }
-  .evidence-preview { display: block; width: 100%; height: auto; border: 1px solid var(--color-border); border-radius: 11px; }
+  .evidence-empty {
+    display: flex;
+    min-height: 210px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    border: 1px solid var(--color-border);
+    border-radius: 11px;
+    background: color-mix(in oklab, var(--muted), var(--background) 55%);
+    color: var(--color-muted-foreground);
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+
+  .evidence-empty-mark {
+    display: grid;
+    width: 34px;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 9px;
+    background: color-mix(in oklab, var(--muted), var(--background) 40%);
+    color: var(--color-muted-foreground);
+  }
 
   :focus-visible { outline: 3px solid var(--color-ring); outline-offset: 3px; }
 
@@ -504,7 +527,7 @@
     .more-button { grid-column: auto; }
     .visual-panel { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; margin-top: 0.5rem; }
     .circle-diagram { max-width: 340px; justify-self: center; }
-    .evidence-preview { width: min(100%, 420px); justify-self: center; }
+    .evidence-empty { width: min(100%, 420px); min-height: 160px; justify-self: center; }
   }
 
   @media (prefers-reduced-motion: reduce) {

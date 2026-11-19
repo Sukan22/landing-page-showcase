@@ -9,11 +9,9 @@ import {
   Search,
   ShieldAlert,
   UserRound,
-  Zap,
 } from "lucide-react";
 
 import circleDiagram from "@/assets/circel.png.asset.json";
-import evidencePreview from "@/assets/evidence.png.asset.json";
 
 const navItems = [
   { label: "Find & Explore", icon: Search, tone: "teal", active: true },
@@ -132,7 +130,10 @@ function Index() {
 
             <aside className="visual-panel" aria-label="Connected intelligence and evidence">
               <img className="circle-diagram" src={circleDiagram.url} alt="Connected intelligence relationship diagram" />
-              <img className="evidence-preview" src={evidencePreview.url} alt="Evidence preview showing parsed GLPOST01 COBOL program details" />
+              <div className="evidence-empty" aria-label="Evidence: no data yet">
+                <span className="evidence-empty-mark" aria-hidden="true"><Search size={18} /></span>
+                <span>No data yet</span>
+              </div>
             </aside>
           </div>
         </main>
